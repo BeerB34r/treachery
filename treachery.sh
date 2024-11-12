@@ -6,7 +6,7 @@ webrun(){
 }
 
 # Main program
-echo -n 'Hello and welcome to this framework for treachery, built by the Goblin himself, for your execution pleasure. within you will find many "useful" options, available to you through just a few command-line arguments.' $0 "-h\n\n"
+echo -n 'Hello and welcome to this framework for treachery, built by the Goblin himself, for your execution pleasure. within you will find many "useful" options, available to you through just a few command-line arguments.'"\n\n"
 
 case "$1" in
 	"forked bom")
