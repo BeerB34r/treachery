@@ -61,6 +61,9 @@ case "${INPUT}" in
 		echo -n "Boykisser chosen\n"
 		webrun ${BASEURL}/assorted/you_like_leaving_your_screen_unlocked_dont_you.sh
 		;;
+	"prompt")
+		echo -n "Prompt chosen\n"
+		webrun ${BASEURL}/assorted/prompt.sh
 	*)
 		if [ -n "${INPUT}" ]
 		then
