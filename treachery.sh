@@ -38,7 +38,9 @@ case "${INPUT}" in
 	'forkbomb' does an actual forkbomb, do not use lightly
 	'gif' gives you the choice between several different ascii gifs to display in terminal
 	'parrot' displays a disco parrot in the terminal
-	'boykisser' sets the users prompt to Boykisser with the caption 'You like leaving your screen unlocked, dont you'
+	'boykisser' sets the users prompt to Boykisser with the caption 'You like leaving your screen unlocked, dont you' (21 lines tall)
+		NB! is permanent, as it changes all* shell startup scripts, as well as .profile
+	'prompt' sets the users prompt to a much less intrusive version of the boykisser (1 line tall)
 		NB! is permanent, as it changes all* shell startup scripts, as well as .profile"
 		;;
 	"forked bom")
@@ -64,6 +66,7 @@ case "${INPUT}" in
 	"prompt")
 		echo -n "Prompt chosen\n"
 		webrun ${BASEURL}/assorted/prompt.sh
+		;;
 	*)
 		if [ -n "${INPUT}" ]
 		then
