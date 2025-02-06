@@ -1,3 +1,3 @@
 #!/bin/sh
 
-curl ascii.live/parrot
+curl parrot.live

