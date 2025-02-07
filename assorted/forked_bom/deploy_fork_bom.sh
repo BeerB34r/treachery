@@ -15,5 +15,5 @@ deploy(){
 			webrun ${location} &
 		done
 }
-
+clear
 deploy

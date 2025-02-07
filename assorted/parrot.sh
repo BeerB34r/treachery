@@ -1,3 +1,4 @@
 #!/bin/sh
 
-curl parrot.live
+xterm -fullscreen -hold -j -mesg -e curl parrot.live &
+clear

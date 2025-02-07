@@ -1,5 +1,11 @@
 #!/bin/sh
-
+# dash uses . not source, so this checks if that needs to be remedied
+if which source 2>/dev/null >/dev/null
+then
+	:;
+else
+	alias source="."
+fi
 # Function declarations
 webrun(){
 	sh -c "$(wget -qO - $1)"
@@ -80,3 +86,4 @@ treachery(){
 	esac
 }
 treachery $@
+clear
