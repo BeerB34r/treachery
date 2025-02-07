@@ -86,4 +86,3 @@ treachery(){
 	esac
 }
 treachery $@
-clear
