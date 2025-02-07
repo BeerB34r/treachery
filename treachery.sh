@@ -53,6 +53,7 @@ treachery(){
 		'prompt' sets the users prompt to a much less intrusive version of the boykisser (1 line tall)
 			NB! is permanent, as it changes all* shell startup scripts, as well as .profile
 			"
+			if [ ! "$@" = "" ]; then return; fi
 			treachery
 			;;
 		"forked bom")
@@ -82,11 +83,12 @@ treachery(){
 		*)
 			if [ -n "${INPUT}" ]
 			then
-				echo "'${INPUT}' not found"
+				echo "'${INPUT}' not found, see 'list' for all available options"
 			else
 				echo "No input detected, abandoning treachery"
 				exit
 			fi
+			if [ ! "$@" = "" ]; then return; fi
 			read -p "try again? [y/n]: " RETRY
 			if [ ! "${RETRY}" = "n" ]
 			then
