@@ -45,7 +45,7 @@ treachery(){
 			echo "available options are as follows:
 		'list'|'help'|'-h' displays this list
 		'forked bom' summons a bunch of forks in terminals
-		'forkbomb' does an actual forkbomb, do not use lightly
+		'forkbomb' does an actual forkbomb, \033[1m\033[4mdo not use lightly\033[0m
 		'gif' gives you the choice between several different ascii gifs to display in terminal
 		'parrot' displays a disco parrot in the terminal
 		'boykisser' sets the users prompt to Boykisser with the caption 'You like leaving your screen unlocked, dont you' (21 lines tall)
