@@ -4,13 +4,13 @@ gif(){
 	curl -s ascii.live/${1}
 }
 gifscreen(){
-	xterm -fullscreen -hold -j -mesg -title "" -e curl -s ascii.live/${1} &
+	xterm -fullscreen -hold -j -fa default -fs 6 -mesg -title "" -e curl -s ascii.live/${1} &
 	clear
 }
 
 OPTIONS=`gif list | cut -f 2 -d ':' | tr -d '"[]}' | tr ',' "\n" | cat -n`
 
-printf "${OPTIONS}\nChoose any of the provided options: "
+printf "${OPTIONS}\nYou can change fontsize to fit the screen better using <shift><numpad+> and <shift><numpad->\nChoose any of the provided options: "
 read CHOICE
 CHOICE="${CHOICE}"
 if [ ! -n "`printf "${OPTIONS}\n" | awk '{print $1}' | grep -Ee "^${CHOICE}$"`" ]
