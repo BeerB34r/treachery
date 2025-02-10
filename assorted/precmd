@@ -1,0 +1,5 @@
+#!/bin/sh
+
+PROMPT_COMMAND=''
+CMD(){ eval $PROMPT_COMMAND }
+precmd_functions=(CMD)
