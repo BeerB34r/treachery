@@ -9,24 +9,14 @@ fi
 # Function declarations
 webrun(){
 	sh -c "$(wget -qO - $1)"
-	case "${SHELL}" in
-		"/bin/zsh")
-			source "${HOME}/.zshrc"
-			;;
-		"/bin/bash")
-			source "${HOME}/.bashrc"
-			;;
-		"/bin/fish")
-			source "${HOME}/.config/fish/config.fish"
-			;;
-		*)
-			;;
-	esac
 }
 split_screen(){
 	printf "\033(0"%"`tput cols`"s"\033(B\n" | tr ' ' 'q'
 }
 BASEURL="https://raw.githubusercontent.com/BeerB34r/treachery/refs/heads/master"
+B="\033[1m"
+U="\033[4m"
+N="\033[0m"
 # Main program
 echo -n 'Hello and welcome to this framework for treachery, built by the Goblin himself, for your execution pleasure. within you will find many "useful" options, available to you through just a few command-line arguments.'"\n\n"
 
@@ -45,7 +35,7 @@ treachery(){
 			echo "available options are as follows:
 		'list'|'help'|'-h' displays this list
 		'forked bom' summons a bunch of forks in terminals
-		'forkbomb' does an actual forkbomb, \033[1m\033[4mdo not use lightly\033[0m
+		'forkbomb' does an actual forkbomb, ${B}${U}do not use lightly${N}
 		'gif' gives you the choice between several different ascii gifs to display in terminal
 		'parrot' displays a disco parrot in the terminal
 		'boykisser' sets the users prompt to Boykisser with the caption 'You like leaving your screen unlocked, dont you' (21 lines tall)
