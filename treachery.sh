@@ -42,6 +42,11 @@ treachery(){
 			NB! is permanent, as it changes all* shell startup scripts, as well as .profile
 		'prompt' sets the users prompt to a much less intrusive version of the boykisser (1 line tall)
 			NB! is permanent, as it changes all* shell startup scripts, as well as .profile
+		'brightness' sets the gamma of the screen
+		'rotate' rotates the screen by a factor
+		'flip' rotates screen the 'regular' way
+			IE: how you would rotate your monitor
+		'zoom' zooms the screen in by a factor
 			"
 			if [ ! "$@" = "" ]; then return; fi
 			treachery
@@ -69,6 +74,22 @@ treachery(){
 		"prompt")
 			echo "Prompt chosen"
 			webrun ${BASEURL}/assorted/prompt.sh
+			;;
+		"brightness")
+			echo "Brightness chosen"
+			webrun ${BASEURL}/assorted/brightne.sh
+			;;
+		"rotate")
+			echo "Rotate chosen"
+			webrun ${BASEURL}/assorted/rotate.sh
+			;;
+		"flip")
+			echo "Flip chosen"
+			webrun ${BASEURL}/assorted/screen.sh
+			;;
+		"zoom")
+			echo "Zoom chosen"
+			webrun ${BASEURL}/assorted/zoom.sh
 			;;
 		*)
 			if [ -n "${INPUT}" ]
