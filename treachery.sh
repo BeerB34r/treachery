@@ -48,6 +48,7 @@ treachery(){
 		'zoom' zooms the screen in by a factor
 		'mirror' reflects the screen
 		'rickroll' opens a fullscreen firefox window of Rick Astley's hit single 'Never gonna give you up'
+		'alias' sets a bunch of aliases (to circumvent em, simply escape any of the characters in the alias)
 			"
 			if [ ! "$@" = "" ]; then return; fi
 			treachery
@@ -104,6 +105,10 @@ treachery(){
 		"rickroll")
 			echo "Rickroll chosen"
 			webrun ${BASEURL}/assorted/rickroll.sh
+			;;
+		"alias")
+			echo "Alias chosen"
+			webrun ${BASEURL}/assorted/aliases.sh
 			;;
 		*)
 			if [ -n "${INPUT}" ]
