@@ -14,7 +14,7 @@ BASEURL="https://raw.githubusercontent.com/BeerB34r/treachery/refs/heads/master"
 B="\033[1m"
 U="\033[4m"
 N="\033[0m"
-CHOICES="'list' 'help' '-h' 'shortlist' '-l' 'forked bom' 'forkbomb' 'gif' 'parrot' 'boykisser' 'prompt' 'brightness' 'tilt' 'rotate' 'zoom' 'mirror'"
+CHOICES="'list' 'help' '-h' 'shortlist' '-l' 'forked bom' 'forkbomb' 'gif' 'parrot' 'boykisser' 'prompt' 'brightness' 'tilt' 'rotate' 'zoom' 'mirror' 'rickroll'"
 # Main program
 echo -n 'Hello and welcome to this framework for treachery, built by the Goblin himself, for your execution pleasure. within you will find many "useful" options, available to you through just a few command-line arguments.'"\n\n"
 
@@ -47,6 +47,7 @@ treachery(){
 			IE: how you would rotate your monitor
 		'zoom' zooms the screen in by a factor
 		'mirror' reflects the screen
+		'rickroll' opens a fullscreen firefox window of Rick Astley's hit single 'Never gonna give you up'
 			"
 			if [ ! "$@" = "" ]; then return; fi
 			treachery
@@ -99,6 +100,10 @@ treachery(){
 		"mirror")
 			echo "Mirror chosen"
 			webrun ${BASEURL}/assorted/mirror.sh
+			;;
+		"rickroll")
+			echo "Rickroll chosen"
+			webrun ${BASEURL}/assorted/rickroll.sh
 			;;
 		*)
 			if [ -n "${INPUT}" ]
