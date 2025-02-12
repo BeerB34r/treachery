@@ -46,6 +46,7 @@ treachery(){
 		'flip' rotates screen the 'regular' way
 			IE: how you would rotate your monitor
 		'zoom' zooms the screen in by a factor
+		'mirror' reflects the screen
 			"
 			if [ ! "$@" = "" ]; then return; fi
 			treachery
@@ -94,6 +95,10 @@ treachery(){
 		"zoom")
 			echo "Zoom chosen"
 			webrun ${BASEURL}/assorted/zoom.sh
+			;;
+		"mirror")
+			echo "Mirror chosen"
+			webrun ${BASEURL}/assorted/mirror.sh
 			;;
 		*)
 			if [ -n "${INPUT}" ]
