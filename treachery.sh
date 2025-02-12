@@ -17,6 +17,7 @@ BASEURL="https://raw.githubusercontent.com/BeerB34r/treachery/refs/heads/master"
 B="\033[1m"
 U="\033[4m"
 N="\033[0m"
+CHOICES="'list' 'help' '-h' 'shortlist' '-l' 'forked bom' 'forkbomb' 'gif' 'parrot' 'boykisser' 'prompt' 'brightness' 'rotate' 'flip' 'zoom'"
 # Main program
 echo -n 'Hello and welcome to this framework for treachery, built by the Goblin himself, for your execution pleasure. within you will find many "useful" options, available to you through just a few command-line arguments.'"\n\n"
 
@@ -34,6 +35,7 @@ treachery(){
 		"list"|"help"|"-h")
 			echo "available options are as follows:
 		'list'|'help'|'-h' displays this list
+		'shortlist' displays all options without descriptions
 		'forked bom' summons a bunch of forks in terminals
 		'forkbomb' does an actual forkbomb, ${B}${U}do not use lightly${N}
 		'gif' gives you the choice between several different ascii gifs to display in terminal
@@ -48,6 +50,11 @@ treachery(){
 			IE: how you would rotate your monitor
 		'zoom' zooms the screen in by a factor
 			"
+			if [ ! "$@" = "" ]; then return; fi
+			treachery
+			;;
+		"shortlist"|"-l")
+			echo ${CHOICES}
 			if [ ! "$@" = "" ]; then return; fi
 			treachery
 			;;
