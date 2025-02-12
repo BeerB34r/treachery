@@ -7,12 +7,9 @@ else
 	alias source="."
 fi
 # Function declarations
-webrun(){
-	sh -c "$(wget -qO - $1)"
-}
-split_screen(){
-	printf "\033(0"%"`tput cols`"s"\033(B\n" | tr ' ' 'q'
-}
+webrun(){ sh -c "$(wget -qO - $1)" ; }
+split_screen(){ printf "\033(0"%"`tput cols`"s"\033(B\n" | tr ' ' 'q' ; }
+# funny variables
 BASEURL="https://raw.githubusercontent.com/BeerB34r/treachery/refs/heads/master"
 B="\033[1m"
 U="\033[4m"
