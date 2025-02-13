@@ -1,3 +1,3 @@
 #!/bin/sh
-firefox -no-remote -safe-mode -setDefaultBrowser -private-window 'fishcore.art'
+firefox --safe-mode --setDefaultBrowser --kiosk --private-window 'fishcore.art'
 clear
