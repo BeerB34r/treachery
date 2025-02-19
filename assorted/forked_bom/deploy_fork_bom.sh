@@ -16,4 +16,4 @@ deploy(){
 		done
 }
 clear
-deploy
+deploy &
