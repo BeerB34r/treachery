@@ -34,21 +34,31 @@ treachery(){
 	1	'list'|'help'|'-h' displays this list
 	2	'shortlist' displays all options without descriptions
 	3	'forked bom' summons a bunch of forks in terminals
+			cleanup can be done through killing all processes named 'sh' and 'deploy_fork_bom', and _then_ closing the terminals
 	4	'forkbomb' does an actual forkbomb, ${B}${U}do not use lightly${N}
+			can be stopped if youre really quick with your killing
 	5	'gif' gives you the choice between several different ascii gifs to display in terminal
 	6	'parrot' displays a disco parrot in the terminal
 	7	'boykisser' sets the users prompt to Boykisser with the caption 'You like leaving your screen unlocked, dont you' (21 lines tall)
 			NB! is permanent, as it changes all* shell startup scripts, as well as .profile
+			cleanup can be done by editing ~/.zshrc, ~/.bashrc, ~/.config/fish/config.fish && ~/.profile
 	8	'prompt' sets the users prompt to a much less intrusive version of the boykisser (1 line tall)
 			NB! is permanent, as it changes all* shell startup scripts, as well as .profile
+			cleanup can be done by editing ~/.zshrc, ~/.bashrc, ~/.config/fish/config.fish && ~/.profile
 	9	'brightness' sets the gamma of the screen
+			1 is default brightness
 	10	'tilt' tilt the screen by some factor
+			0 is default tilt
 	11	'rotate' rotates screen the 'regular' way
 			IE: how you would rotate your monitor
+			0 is default orientation
 	12	'zoom' zooms the screen in by a factor
+			1 is default zoom factor
 	13	'mirror' reflects the screen
+			normal is default value
 	14	'rickroll' opens a fullscreen firefox window of Rick Astley's hit single 'Never gonna give you up'
 	15	'alias' sets a bunch of aliases (to circumvent em, simply escape any of the characters in the alias)
+			cleanup can be done by editing ~/.zshrc, ~/.bashrc && ~/.config/fish/config.fish
 	16	'fish' fish
 			"
 			if [ ! "$@" = "" ]; then return; fi
