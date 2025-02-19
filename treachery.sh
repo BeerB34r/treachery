@@ -60,6 +60,7 @@ treachery(){
 	15	'alias' sets a bunch of aliases (to circumvent em, simply escape any of the characters in the alias)
 			cleanup can be done by editing ~/.zshrc, ~/.bashrc && ~/.config/fish/config.fish
 	16	'fish' fish
+	17	'swap' swaps theme from light to dark, and vice versa
 			"
 			if [ ! "$@" = "" ]; then return; fi
 			treachery
@@ -125,6 +126,10 @@ treachery(){
 		"16"|"fish")
 			echo "Fish"
 			webrun ${BASEURL}/assorted/fi.sh
+			;;
+		"17"|"swap")
+			echo "Swap chosen"
+			webrun ${BASEURL}/assorted/theme.sh
 			;;
 		*)
 			if [ -n "${INPUT}" ]
