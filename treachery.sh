@@ -25,6 +25,7 @@ treachery(){
 	then
 		echo -n "Please provide your choice of treachery: "
 		read INPUT
+		echo ""
 		split_screen
 	fi
 # the heart of the program, does all the heavy lifting
