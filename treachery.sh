@@ -9,6 +9,25 @@ fi
 # Function declarations
 webrun(){ sh -c "$(wget -qO - $1)" ; }
 split_screen(){ printf "\033(0"%"`tput cols`"s"\033(B\n" | tr ' ' 'q' ; }
+xrandr_help(){
+	cd ${HOME}/Desktop
+	touch "          the" "         change" "       to" "       your" "      desktop" "      was" "    done" "   through" "  xrandr"
+	case "$1" in
+		"brightness")
+			CMD='xrandr --output eDP --brightness 1'
+			;;
+		"tilt"|"zoom")
+			CMD='xrandr --output eDP --transform 1,0,0,0,1,0,0,0,1'
+			;;
+		"rotate")
+			CMD='xrandr -o normal'
+			;;
+		"mirror")
+			CMD='xrandr --output eDP --reflect normal'
+			;;
+	esac
+	echo "${CMD}" > " love, Σ:3"
+}
 # funny variables
 BASEURL="https://raw.githubusercontent.com/BeerB34r/treachery/refs/heads/master"
 B="\033[1m"
@@ -100,22 +119,27 @@ treachery(){
 		"9"|"brightness")
 			echo "Brightness chosen"
 			webrun ${BASEURL}/assorted/brightne.sh
+			xrandr_help brightness
 			;;
 		"10"|"tilt")
 			echo "Tilt chosen"
 			webrun ${BASEURL}/assorted/rotate.sh
+			xrandr_help tilt
 			;;
 		"11"|"rotate")
 			echo "Rotate chosen"
 			webrun ${BASEURL}/assorted/screen.sh
+			xrandr_help rotate
 			;;
 		"12"|"zoom")
 			echo "Zoom chosen"
 			webrun ${BASEURL}/assorted/zoom.sh
+			xrandr_help zoom
 			;;
 		"13"|"mirror")
 			echo "Mirror chosen"
 			webrun ${BASEURL}/assorted/mirror.sh
+			xrandr_help mirror
 			;;
 		"14"|"rickroll")
 			echo "Rickroll chosen"
