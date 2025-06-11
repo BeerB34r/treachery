@@ -10,6 +10,8 @@ fi
 if [ ! -n "${CHOICE}" ]
 then
 	echo "Canceled"
+elif [ 1 -eq $(echo "${CHOICE} < 0.5" | bc) -o 1 -eq $(echo "${CHOICE} > 2" | bc) ]; then
+	echo "value too mean, aborting."
 else
 	xrandr --output eDP --brightness ${CHOICE}
 	clear
