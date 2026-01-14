@@ -4,7 +4,7 @@ gif(){
 	curl -s ascii.live/${1}
 }
 gifscreen(){
-	xterm -fullscreen -hold -j -fa default -fs 6 -mesg -title "" -e curl -s ascii.live/${1} &
+	xterm -hold -j -fa default -fs 6 -mesg -title "" -e curl -s ascii.live/${1} &
 	clear
 }
 
